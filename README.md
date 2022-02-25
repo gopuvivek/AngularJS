@@ -1,2 +1,2 @@
-# coursera-HTML-CSS-JavaScript
+# Coursera-AngularJS
 coursera assignment repository
