@@ -1,0 +1,31 @@
+
+.emptyMessage {
+  font-weight: bold;
+  color: red;
+  font-size: 1.2em;
+}
+
+.searchDiv{
+  margin: 30px;
+  
+}
+
+.searchDiv > input{
+  height: 32.77px;
+}
+.searchDiv > ul{
+  margin-top: 30px;
+}
+li {
+  margin-bottom: 7px;
+  font-size: 1.2em;
+}
+li > button {
+  margin-left: 6px;
+}
+button > span{
+  color: green;
+}
+li> button > span {
+  color: red;
+}
