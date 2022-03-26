@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='NarrowItDownApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    
+    <title>Menu Search</title>
+  </head>
+  <body>
+    
+    <div class="searchDiv" ng-controller='NarrowItDownController as list'>
+      <h1>Search Menu Items</h1>
+      <input type="text"  ng-model="list.searchItem" placeholder="Search Item">
+      <button class ="btn btn-default" ng-click="list.searchMenu(list.searchItem)"> <span class="glyphicon glyphicon-search"> </span> Narrow It Down For Me!</button>
+
+      <ul>
+        <li ng-repeat="item in list.items">
+          <b><i>{{ item.name }} </i> {{ item.short_name | uppercase }}</b>
+          <button class ="btn btn-default" ng-click="list.removeItem($index)"> <span class="glyphicon glyphicon-remove"></span> Don't want this one!</button>
+          <p>{{ item.description | uppercase }}</p>
+        </li>
+      </ul>
+      
+      <p class="emptyMessage" ng-if="list.emptyMessage">Nothing Found</p>
+      <img ng-if="list.showSpinner" src="Spinner.gif" alt="loading">
+      
+    </div>
+  </body>
+</html>
