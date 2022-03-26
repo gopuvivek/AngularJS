@@ -5,3 +5,7 @@
 [Sample Menu](https://gopuvivek.github.io/AngularJS/module4-solution/)\
 [DC Bistro](https://gopuvivek.github.io/AngularJS/module5-solution/)
 
+
+# JHU AngularJS
+[Lectures](https://gopuvivek.github.io/AngularJS/JHU%20Lectures/)
+
