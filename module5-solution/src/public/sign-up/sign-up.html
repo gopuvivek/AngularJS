@@ -1,0 +1,61 @@
+<div class="container">
+<form name="signUpForm">
+    <div class="form-group row">
+        <label for="fname" class="col-sm-offset-3 col-sm-2 col-form-label">First Name</label>
+        <div class="col-sm-4">
+          <input type="text" name="fname" class="form-control" ng-model="ctrl.fname" id="fname" placeholder="First Name" required>
+          <span ng-if="signUpForm.fname.$invalid && signUpForm.fname.$touched">
+              Please enter your first name.
+            </span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="lname" class="col-sm-offset-3 col-sm-2 col-form-label">Last Name</label>
+        <div class="col-sm-4">
+          <input type="text" name="lname" class="form-control" ng-model="ctrl.lname" id="lname" placeholder="Last Name" required>
+          <span ng-if="signUpForm.lname.$invalid && signUpForm.lname.$touched">
+              Please enter your last name.
+            </span>
+        </div>
+      </div>
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-offset-3 col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-4">
+        <input type="email" name="email" class="form-control" id="staticEmail" ng-model="ctrl.email" placeholder="email@example.com" required>
+        <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="phone" class="col-sm-offset-3 col-sm-2 col-form-label">Phone</label>
+      <div class="col-sm-4">
+        <input type="tel" name="phone" class="form-control" id="phone" ng-model="ctrl.phone" placeholder="###-###-####" pattern="(\d{3})-(\d{3})-(\d{4})" required>
+        <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+            Phone must be in the format ###-###-####. <br>It must only contain digits.
+          </span>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label for="favitem" class="col-sm-offset-3 col-sm-2 col-form-label">Favorite Menu Item</label>
+        <div class="col-sm-4">
+          <input type="text" name="favitem" class="form-control" id="favitem" ng-model="ctrl.favitem" placeholder="Menu Number" required>
+          <span ng-if="signUpForm.favitem.$invalid && signUpForm.favitem.$touched">
+            Please enter a menu number.
+          </span>
+        </div>
+    </div>
+    <div class="row">
+        <button type="submit" class="col-sm-offset-5 col-sm-2 btn btn-success"  ng-disabled="signUpForm.$invalid" ng-click="ctrl.validateAndSave()">Submit</button>
+    </div>
+
+  </form>
+  <div class="row" style="margin-top: 50px;">
+    <div ng-if="ctrl.success" class="text-center col-sm-offset-4 col-sm-4 alert alert-success d-flex align-items-center" role="alert">
+        <span class="glyphicon glyphicon-ok-circle"></span> Your information has been saved !
+    </div>
+    <div ng-if="ctrl.success!==undefined && !ctrl.success" class="text-center col-sm-offset-4 col-sm-4 alert alert-danger d-flex align-items-center" role="alert">
+      <span class="glyphicon glyphicon-remove-circle"></span> No such menu number exists.
+    </div>
+  </div>
+  </div>
